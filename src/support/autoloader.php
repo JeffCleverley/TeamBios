@@ -24,11 +24,10 @@ namespace Deftly\TeamBios\Support;
 function autoload_files( $src_root_dir ) {
 
 	$filenames = array(
-		'custom/post-type',
-		'custom/taxonomy',
+		 'custom/custom-post-type',
 	);
 
-	foreach ( $filenames as $filename ) {
+	foreach( $filenames as $filename ) {
 		include_once( $src_root_dir . $filename . '.php' );
 	}
 }

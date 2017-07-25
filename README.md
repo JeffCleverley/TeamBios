@@ -1,4 +1,4 @@
-# Team Bios Plugin
+# Deftly Team Bios Plugin
 
 A Team Bios Plugin, utilising custom post types.  
 

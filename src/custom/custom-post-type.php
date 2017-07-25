@@ -21,7 +21,6 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_post_type' );
  * @return void
  */
 function register_custom_post_type() {
-
 	$labels = array(
 		'name'               => _x( 'Team Bios', 'post type general name', 'teambios' ),
 		'singular_name'      => _x( 'Team Bio', 'post type singular name', 'teambios' ),
@@ -37,20 +36,17 @@ function register_custom_post_type() {
 		'parent_item_colon'  => __( 'Parent Team Bios:', 'teambios' ),
 		'not_found'          => __( 'No team bios found.', 'teambios' ),
 		'not_found_in_trash' => __( 'No team bios found in Trash.', 'teambios' ),
-
 		'featured_image'        => __( 'Profile Image', 'teambios' ),
 		'set_featured_image'    => __( 'Set Profile Image', 'teambios' ),
 		'remove_featured_image' => __( 'Remove Profile Image', 'teambios' ),
 		'use_featured_image'    => __( 'Use Profile Image', 'teambios' ),
 	);
-
 	$features = get_all_post_type_features( 'post', array(
 		'excerpt',
 		'comments',
 		'trackbacks',
 		'custom-fields',
 	) );
-
 	$args = array(
 		'label'        => __( 'Team Bios', 'teambios' ),
 		'labels'       => $labels,
@@ -60,10 +56,8 @@ function register_custom_post_type() {
 		'hierarchical' => false,
 		'has_archive'  => true,
 	);
-
 	register_post_type( 'team-bios', $args );
 }
-
 /**
  * Get all the post type features for the given post type.
  *
@@ -76,20 +70,15 @@ function register_custom_post_type() {
  */
 function get_all_post_type_features( $post_type = 'post', $exclude_features = array() ) {
 	$configured_features = get_all_post_type_supports( $post_type );
-
 	if ( ! $exclude_features ) {
 		return array_keys( $configured_features );
 	}
-
 	$features = array();
-
 	foreach ( $configured_features as $feature => $value ) {
 		if ( in_array( $feature, $exclude_features ) ) {
 			continue;
 		}
-
 		$features[] = $feature;
 	}
-
 	return $features;
 }
