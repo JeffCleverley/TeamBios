@@ -2,11 +2,13 @@
 /**
  * Custom Post Type functionality
  *
- * @package     Deftly\TeamBios\Custom
+ * @package     Deflty\TeamBios\Custom
  * @since       0.0.1
  * @author      Jeff Cleverley
  * @link        https://github.com/JeffCleverley/TeamBios
  * @license     GNU General Public License 2.0+
+ *
+ * Credit 		Tonya Mork - KnowTheCode
  */
 namespace Deftly\TeamBios\Custom;
 

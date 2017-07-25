@@ -1,14 +1,16 @@
 <?php
 /**
- * File autoloader functionality
+ * Custom Post Type functionality
  *
- * @package     KnowTheCode\TeamBios\Support
- * @since       1.0.0
- * @author      hellofromTonya
- * @link        https://knowthecode.io
+ * @package     Deflty\TeamBios\Custom
+ * @since       0.0.1
+ * @author      Jeff Cleverley
+ * @link        https://github.com/JeffCleverley/TeamBios
  * @license     GNU General Public License 2.0+
+ *
+ * Credit 		Tonya Mork - KnowTheCode
  */
-namespace KnowTheCode\TeamBios\Support;
+namespace Deftly\TeamBios\Support;
 
 /**
  * Load all of the plugin's files.

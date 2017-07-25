@@ -16,8 +16,8 @@ It will include Custom Taxonomies and a Widget in the future.
 
 Installation from GitHub is as simple as cloning the repo onto your local machine.  To clone the repo, do the following:
 
-1. Using PhpStorm, open your project and navigate to `wp-content/plugins/`. (Or open terminal and navigate there).
-2. Then type: `git clone https://github.com/KnowTheCode/Custom-Post-Type-Basics-Lab`.
+1. Open your project and navigate to `wp-content/plugins/`. (Or open terminal and navigate there).
+2. Then type: `git clone https://github.com/JeffCleverley/TeamBios`.
 3. Go into the new folder
 
 ## Contributions
