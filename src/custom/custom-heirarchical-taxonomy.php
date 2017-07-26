@@ -16,9 +16,9 @@ add_action( 'init', __NAMESPACE__ . '\register_department_heirarchical_taxonomy'
 /**
  * Register the custom taxonomy.
  *
- * @since 0.0.1
+ * @since   0.0.1
  *
- * @return void
+ * @return  void
  */
 function register_department_heirarchical_taxonomy() {
 
@@ -39,7 +39,7 @@ function register_department_heirarchical_taxonomy() {
         'view_item'         =>    __( 'View Department', 'teambios' ),
 	);
 
-    $args = array(
+    $configuration_args = array(
         'label'         => $menu_label,
         'labels'        => $labels,
         'hierarchical'  => true,
@@ -48,5 +48,26 @@ function register_department_heirarchical_taxonomy() {
         'show_admin_column'     => true,
     );
 
-    register_taxonomy( 'department', 'team-bios', $args );
+    register_taxonomy( 'department', array( 'team-bios', ), $configuration_args );
+}
+
+add_filter( 'genesis_post_meta', __NAMESPACE__ . '\add_department_taxonomy_to_genesis_footer_post_meta' );
+/**
+ * Filter the Genesis Footer Entry Post meta
+ * to add the post terms for our custom taxonomy
+ *
+ * @since   0.0.1
+ *
+ * @param   string  $post_meta  default "[post_categories] [post_tags]".
+ *
+ * @return  string              default with custom taxonomies concatenated on in shortcode form.
+ */
+function add_department_taxonomy_to_genesis_footer_post_meta( $post_meta ) {
+
+    $post_meta .= sprintf(
+            ' [post_terms taxonomy="department" before="%s" after="<br />"]',
+            __( 'Department: ', 'teambios' )
+    );
+
+    return $post_meta;
 }

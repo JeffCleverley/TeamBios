@@ -16,9 +16,9 @@ add_action( 'init', __NAMESPACE__ . '\register_team_bios_post_type' );
 /**
  * Register the custom post type.
  *
- * @since 0.0.1
+ * @since 	0.0.1
  *
- * @return void
+ * @return 	void
  */
 function register_team_bios_post_type() {
 
@@ -47,7 +47,7 @@ function register_team_bios_post_type() {
 		'trackbacks',
 	) );
 
-	$args = array(
+	$configuration_args = array(
 		'label'        		=> __( 'Team Bios', 'teambios' ),
 		'labels'       		=> $labels,
 		'public'       		=> true,
@@ -59,18 +59,18 @@ function register_team_bios_post_type() {
 		'show_in_nav_menus'	=> false,
 	);
 
-	register_post_type( 'team-bios', $args );
+	register_post_type( 'team-bios', $configuration_args );
 
 }
 /**
  * Get all the post type features for the given post type.
  *
- * @since 0.0.1
+ * @since 	0.0.1
  *
- * @param string $post_type Given post type
- * @param array $exclude_features Array of features to exclude
+ * @param 	string 	$post_type 			Given post type
+ * @param 	array 	$exclude_features 	Array of features to exclude
  *
- * @return array
+ * @return 	array
  */
 function get_all_post_type_features( $post_type = 'post', $excluded_features = array() ) {
 
@@ -159,13 +159,13 @@ function add_help_text_to_team_bios_post_type() {
 
 	$help_content = load_help_content();
 
-	$args = array(
+	$configuration_content = array(
     	'id'      => 'team-bios-help', //unique id for the tab
     	'title'   => 'Team Bios Help', //unique visible title for the tab
     	'content' => $help_content,  //actual help text
   	);
 
-	$screen->add_help_tab( $args );
+	$screen->add_help_tab( $configuration_configuration );
 }
 /**
  * Function to load html content for $help_content as 'content' in add_help_tab above

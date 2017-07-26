@@ -15,11 +15,11 @@ namespace Deftly\TeamBios\Support;
 /**
  * Load all of the plugin's files.
  *
- * @since 1.0.0
+ * @since 	1.0.0
  *
- * @param string $src_root_dir Root directory for the source files
+ * @param 	string $src_root_dir 	Root directory for the source files
  *
- * @return void
+ * @return 	void
  */
 function autoload_files( $src_root_dir ) {
 

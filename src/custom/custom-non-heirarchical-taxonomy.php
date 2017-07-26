@@ -16,9 +16,9 @@ add_action( 'init', __NAMESPACE__ . '\register_territory_non_heirarchical_taxono
 /**
  * Register the custom taxonomy.
  *
- * @since 0.0.1
+ * @since   0.0.1
  *
- * @return void
+ * @return  void
  */
 function register_territory_non_heirarchical_taxonomy() {
 
@@ -43,7 +43,7 @@ function register_territory_non_heirarchical_taxonomy() {
         'view_item'         => __( 'View Territory', 'teambios' ),
 	);
 
-    $args = array(
+    $configuration_args = array(
         'label'         =>  __( 'Territory', 'teambios' ),
         'labels'        => $labels,
         'hierarchical'  => false,
@@ -53,5 +53,26 @@ function register_territory_non_heirarchical_taxonomy() {
         'show_tagcloud'         => true,
     );
 
-    register_taxonomy( 'territory', 'team-bios', $args );
+    register_taxonomy( 'territory', array( 'team-bios', ), $configuration_args );
+}
+
+add_filter( 'genesis_post_meta', __NAMESPACE__ . '\add_territory_taxonomy_to_genesis_footer_post_meta' );
+/**
+ * Filter the Genesis Footer Entry Post meta
+ * to add the post terms for our custom taxonomy
+ *
+ * @since   0.0.1
+ *
+ * @param   string  $post_meta  default "[post_categories] [post_tags]".
+ *
+ * @return  string              default with custom taxonomies concatenated on in shortcode form.
+ */
+function add_territory_taxonomy_to_genesis_footer_post_meta( $post_meta ) {
+
+    $post_meta .= sprintf(
+            ' [post_terms taxonomy="territory" before="%s" after="<br />"]',
+            __( 'Territory: ', 'teambios' )
+    );
+
+    return $post_meta;
 }

@@ -26,9 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Setup the plugin's constants.
  *
- * @since 1.0.0
+ * @since 	1.0.0
  *
- * @return void
+ * @return 	void
  */
 function init_constants() {
 	$plugin_url = plugin_dir_url( __FILE__ );
@@ -43,9 +43,9 @@ function init_constants() {
 /**
  * Initialize the plugin hooks
  *
- * @since 1.0.0
+ * @since 	1.0.0
  *
- * @return void
+ * @return 	void
  */
 function init_hooks() {
 	register_activation_hook( __FILE__, __NAMESPACE__ . '\flush_rewrites' );
@@ -55,9 +55,9 @@ function init_hooks() {
 /**
  * Flush the rewrites.
  *
- * @since 1.0.0
+ * @since 	1.0.0
  *
- * @return void
+ * @return 	void
  */
 function flush_rewrites() {
 	init_autoloader();
@@ -68,9 +68,9 @@ function flush_rewrites() {
 /**
  * The plugin is deactivating.  Delete out the rewrite rules option.
  *
- * @since 1.0.1
+ * @since 	1.0.1
  *
- * @return void
+ * @return 	void
  */
 function deactivate_plugin() {
 	delete_option( 'rewrite_rules' );
@@ -79,9 +79,9 @@ function deactivate_plugin() {
 /**
  * Kick off the plugin by initializing the plugin files.
  *
- * @since 1.0.0
+ * @since 	1.0.0
  *
- * @return void
+ * @return 	void
  */
 function init_autoloader() {
 	require_once( 'src/support/autoloader.php' );
@@ -91,9 +91,9 @@ function init_autoloader() {
 /**
  * Launch the plugin
  *
- * @since 1.0.0
+ * @since 	1.0.0
  *
- * @return void
+ * @return 	void
  */
 function launch() {
 	init_autoloader();
