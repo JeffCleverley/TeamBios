@@ -13,7 +13,7 @@
  * Version:     0.0.1
  * Author:      Jeff Cleverley
  * Author URI:  https://jeffcleverley.com
- * Text Domain: TeamBios
+ * Text Domain: teambios
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -61,9 +61,7 @@ function init_hooks() {
  */
 function flush_rewrites() {
 	init_autoloader();
-
 	Custom\register_custom_post_type();
-
 	flush_rewrite_rules();
 }
 
@@ -87,7 +85,6 @@ function deactivate_plugin() {
  */
 function init_autoloader() {
 	require_once( 'src/support/autoloader.php' );
-
 	Support\autoload_files( __DIR__ . '/src/' );
 }
 
