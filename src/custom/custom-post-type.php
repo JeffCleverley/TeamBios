@@ -24,8 +24,8 @@ function register_custom_post_type() {
 	$labels = array(
 		'singular_name'      => _x( 'Team Bio', 'post type singular name', 'teambios' ),
 		'name_admin_bar'     => _x( 'Team Bio', 'add new on admin bar', 'teambios' ),
-		'add_new'            => _x( 'Add New Team Bio', 'team-bios', 'teambios' ),
-		'add_new_item'       => __( 'Add New Team Bio', 'teambios' ),
+		'add_new'            => _x( 'Add New', 'team-bios', 'teambios' ),
+		'add_new_item'       => __( 'Add New', 'teambios' ),
 		'new_item'           => __( 'New Team Bio', 'teambios' ),
 		'edit_item'          => __( 'Edit Team Bio', 'teambios' ),
 		'view_item'          => __( 'View Team Bio', 'teambios' ),
@@ -70,14 +70,11 @@ function register_custom_post_type() {
  */
 function get_all_post_type_features( $post_type = 'post', $excluded_features = array() ) {
 
-	$configured_features = get_all_post_type_supports( $post_type );
+	$configured_features = array_keys( get_all_post_type_supports( $post_type ) );
 
 	if ( ! $excluded_features ) {
 		return array_keys( $configured_features );
 	}
 
-	$configured_features = array_keys( $configured_features );
-	$features = array_diff( $configured_features, $excluded_features );
-
-	return $features;
+	return array_diff( $configured_features, $excluded_features );
 }
