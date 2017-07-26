@@ -2,7 +2,7 @@
 /**
  * Custom Post Type functionality
  *
- * @package     Deflty\TeamBios\Custom
+ * @package     Deftly\TeamBios\Custom
  * @since       0.0.1
  * @author      Jeff Cleverley
  * @link        https://github.com/JeffCleverley/TeamBios
@@ -25,6 +25,8 @@ function autoload_files( $src_root_dir ) {
 
 	$filenames = array(
 		 'custom/custom-post-type',
+		 'custom/custom-heirarchical-taxonomy',
+		 'custom/custom-non-heirarchical-taxonomy',
 	);
 
 	foreach( $filenames as $filename ) {

@@ -2,7 +2,7 @@
 /**
  * Custom Post Type functionality
  *
- * @package     Deflty\TeamBios\Custom
+ * @package     Deftly\TeamBios\Custom
  * @since       0.0.1
  * @author      Jeff Cleverley
  * @link        https://github.com/JeffCleverley/TeamBios
@@ -12,7 +12,7 @@
  */
 namespace Deftly\TeamBios\Custom;
 
-add_action( 'init', __NAMESPACE__ . '\register_custom_team_bios_post_type' );
+add_action( 'init', __NAMESPACE__ . '\register_team_bios_post_type' );
 /**
  * Register the custom post type.
  *
@@ -20,7 +20,7 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_team_bios_post_type' );
  *
  * @return void
  */
-function register_custom_team_bios_post_type() {
+function register_team_bios_post_type() {
 
 	$labels = array(
 		'singular_name'      	=> _x( 'Team Bio', 'post type singular name', 'teambios' ),
@@ -60,6 +60,7 @@ function register_custom_team_bios_post_type() {
 	);
 
 	register_post_type( 'team-bios', $args );
+
 }
 /**
  * Get all the post type features for the given post type.
@@ -81,7 +82,6 @@ function get_all_post_type_features( $post_type = 'post', $excluded_features = a
 
 	return array_diff( $configured_features, $excluded_features );
 }
-
 
 add_filter( 'post_updated_messages', __NAMESPACE__ . '\update_team_bios_post_type_messages' );
 /**
@@ -121,8 +121,8 @@ function update_team_bios_post_type_messages( $messages ) {
 	);
 
 	if ( $post_type_object->publicly_queryable && 'team-bio' === $post_type ) {
-		$permalink = get_permalink( $post->ID );
 
+		$permalink = get_permalink( $post->ID );
 		$view_link = sprintf( ' <a href="%s">%s</a>', esc_url( $permalink ), __( 'View Team Bio', 'teambios' ) );
 		$messages[ $post_type ][1] .= $view_link;
 		$messages[ $post_type ][6] .= $view_link;
@@ -138,7 +138,7 @@ function update_team_bios_post_type_messages( $messages ) {
 }
 
 
-add_action('admin_head', __NAMESPACE__ . '\add_help_text_to_team_bios');
+add_action('admin_head', __NAMESPACE__ . '\add_help_text_to_team_bios_post_type');
 /**
  * Add help tab for team bios custom post type
  *
@@ -149,7 +149,7 @@ add_action('admin_head', __NAMESPACE__ . '\add_help_text_to_team_bios');
  *
  * @return 	void
  */
-function add_help_text_to_team_bios() {
+function add_help_text_to_team_bios_post_type() {
 
   	$screen = get_current_screen();
 
@@ -174,7 +174,7 @@ function add_help_text_to_team_bios() {
  *
  * @since 	0.0.1
  *
- * @return 	string 	$help_content 	HTML and Text from help view 
+ * @return 	string 	$help_content 	HTML and Text from help view
  */
 function load_help_content() {
 

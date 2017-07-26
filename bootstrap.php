@@ -2,7 +2,7 @@
 /**
  * Team Bios Plugin
  *
- * @package     Defly\TeamBios
+ * @package     Deftly\TeamBios
  * @author      Jeff Cleverley
  * @license     GPL-2.0+
  *
@@ -61,7 +61,7 @@ function init_hooks() {
  */
 function flush_rewrites() {
 	init_autoloader();
-	Custom\register_custom_post_type();
+	Custom\register_team_bios_post_type();
 	flush_rewrite_rules();
 }
 
