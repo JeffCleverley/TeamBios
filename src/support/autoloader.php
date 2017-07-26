@@ -25,8 +25,7 @@ function autoload_files( $src_root_dir ) {
 
 	$filenames = array(
 		 'custom/custom-post-type',
-		 'custom/custom-heirarchical-taxonomy',
-		 'custom/custom-non-heirarchical-taxonomy',
+		 'custom/custom-taxonomy',
 	);
 
 	foreach( $filenames as $filename ) {

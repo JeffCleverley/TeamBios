@@ -48,20 +48,25 @@ function init_constants() {
  * @return 	void
  */
 function init_hooks() {
-	register_activation_hook( __FILE__, __NAMESPACE__ . '\flush_rewrites' );
+	register_activation_hook( __FILE__, __NAMESPACE__ . '\activate_plugin' );
 	register_deactivation_hook( __FILE__, __NAMESPACE__ . '\deactivate_plugin' );
+	register_uninstall_hook( __FILE__, __NAMESPACE__ . '\uninstall_plugin' );
 }
 
 /**
- * Flush the rewrites.
+ * Plugin activation handler
  *
  * @since 	1.0.0
  *
  * @return 	void
  */
-function flush_rewrites() {
+function activate_plugin() {
+
 	init_autoloader();
-	Custom\register_team_bios_post_type();
+
+	register_custom_post_type();
+	register_custom_taxonomy();
+
 	flush_rewrite_rules();
 }
 
@@ -73,6 +78,17 @@ function flush_rewrites() {
  * @return 	void
  */
 function deactivate_plugin() {
+	delete_option( 'rewrite_rules' );
+}
+
+/**
+ * Uninstall plugin handler
+ *
+ * @since 	1.0.1
+ *
+ * @return 	void
+ */
+function uninstall_plugin() {
 	delete_option( 'rewrite_rules' );
 }
 

@@ -12,7 +12,7 @@
  */
 namespace Deftly\TeamBios\Custom;
 
-add_action( 'init', __NAMESPACE__ . '\register_team_bios_post_type' );
+add_action( 'init', __NAMESPACE__ . '\register_custom_post_type' );
 /**
  * Register the custom post type.
  *
@@ -20,7 +20,7 @@ add_action( 'init', __NAMESPACE__ . '\register_team_bios_post_type' );
  *
  * @return 	void
  */
-function register_team_bios_post_type() {
+function register_custom_post_type() {
 
 	$labels = array(
 		'singular_name'      	=> _x( 'Team Bio', 'post type singular name', 'teambios' ),
@@ -138,7 +138,7 @@ function update_team_bios_post_type_messages( $messages ) {
 }
 
 
-add_action('admin_head', __NAMESPACE__ . '\add_help_text_to_team_bios_post_type');
+add_action('admin_head', __NAMESPACE__ . '\add_help_text_to_custom_post_type');
 /**
  * Add help tab for team bios custom post type
  *
@@ -149,7 +149,7 @@ add_action('admin_head', __NAMESPACE__ . '\add_help_text_to_team_bios_post_type'
  *
  * @return 	void
  */
-function add_help_text_to_team_bios_post_type() {
+function add_help_text_to_custom_post_type() {
 
   	$screen = get_current_screen();
 
@@ -165,10 +165,10 @@ function add_help_text_to_team_bios_post_type() {
     	'content' => $help_content,  //actual help text
   	);
 
-	$screen->add_help_tab( $configuration_configuration );
+	$screen->add_help_tab( $configuration_content );
 }
 /**
- * Function to load html content for $help_content as 'content' in add_help_tab above
+ * Function to load view into $configuration_content array as 'content' ^
  *
  * Loads html from seperate view
  *
