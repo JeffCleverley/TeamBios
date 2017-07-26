@@ -1,11 +1,8 @@
 # Deftly Team Bios Plugin
 
-A Team Bios Plugin, utilising custom post types.  
+A Team Bios Plugin, utilising custom post types and taxonomies.  
 
 Built while learning from [KnowTheCode](https://knowthecode.io/), awesome tutorials from Tonya Mork.
-
-It will include Custom Taxonomies and a Widget in the future.
-
 
 ## Installation
 
