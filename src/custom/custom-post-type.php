@@ -77,7 +77,7 @@ function get_all_post_type_features( $post_type = 'post', $excluded_features = a
 	$configured_features = array_keys( get_all_post_type_supports( $post_type ) );
 
 	if ( ! $excluded_features ) {
-		return array_keys( $configured_features );
+		return $configured_features;
 	}
 
 	return array_diff( $configured_features, $excluded_features );
