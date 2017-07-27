@@ -1,11 +1,11 @@
 <?php
 
-$help_header_first_list = __('Things to remember when adding or editing a Team Member Bio:', 'teambios');
-$help_item1 = __('Include and be specific about abilities and skillset.', 'teambios');
-$help_item2 = __('Give examples of how those abilities and skillsets have been applied - include brief details about context.', 'teambios');
-$help_header_second_list = __('If you want to schedule the Team Bio to be published in the future:', 'teambios');
+$help_header_first_list = __('Things to remember when adding or editing a Team Member:', 'teambios');
+$help_item1 = __('Include and be specific about the Team Members achievements and background.', 'teambios');
+$help_item2 = __('Give examples of how their abilities and skillsets have been utilised on projects - include brief details about appropriate context.', 'teambios');
+$help_header_second_list = __('If you want to schedule the Team Member to be published in the future:', 'teambios');
 $help_item4 =  __('Under the Publish module, click on the Edit link next to Publish.', 'teambios');
-$help_item5 = __('Change the date to the date to actual publish the Team Bio, then click on Ok.', 'teambios');
+$help_item5 = __('Change the date to the date to actual publish the Team Member, then click on Ok.', 'teambios');
 $header_more_information = __('For more information:', 'teambios');
 $help_link = __('<a href="https//:github.com/JeffCleverley/TeamBios" target="_blank">Team Bios Plugin Documentation</a>', 'teambios');
 

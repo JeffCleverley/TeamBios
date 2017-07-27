@@ -64,8 +64,8 @@ function activate_plugin() {
 
 	init_autoloader();
 
-	register_custom_post_type();
-	register_custom_taxonomy();
+	Custom\register_custom_post_type();
+	Custom\register_custom_taxonomy();
 
 	flush_rewrite_rules();
 }

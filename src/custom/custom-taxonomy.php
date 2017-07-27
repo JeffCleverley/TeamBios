@@ -48,12 +48,12 @@ function register_custom_taxonomy() {
         'show_admin_column'     => true,
     );
 
-    register_taxonomy( 'department', array( 'team-bios', ), $configuration_args );
+    register_taxonomy( 'department', array( 'team-bios', 'team-member', ), $configuration_args );
 
     $labels = '';
     $configuration_args = '';
 
-    $menu_label =  __( 'View Territory', 'teambios' );
+    $menu_label =  __( 'Territories', 'teambios' );
 
     $labels = array(
 		'name'              => _x( 'Territories', 'taxonomy general name', 'teambios' ),
@@ -86,7 +86,7 @@ function register_custom_taxonomy() {
         'show_tagcloud'         => true,
     );
 
-    register_taxonomy( 'territory', array( 'team-bios', ), $configuration_args );
+    register_taxonomy( 'territory', array( 'team-bios', 'team-member', ), $configuration_args );
 }
 
 add_filter( 'genesis_post_meta', __NAMESPACE__ . '\filter_custom_taxonomies_to_genesis_footer_post_meta' );
